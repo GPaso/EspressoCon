@@ -33,6 +33,6 @@ When contributing firmware changes:
  
 ## License
  
-GNU GPA License — see [`LICENSE`](LICENSE) for details.
+GNU GPL License — see [`LICENSE`](LICENSE) for details.
  
 This project is not affiliated with or endorsed by any hardware manufacturer.

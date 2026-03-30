@@ -1,4 +1,4 @@
-# Espresso Controller
+# Espresso Controller (**WIP**)
 
 Open-source firmware for up to 3-group commercial espresso machines, built on the Arduino Mega 2560.
 Controls boiler temperature, pressure, water level, and independent per-group brew cycles — all running concurrently on a non-blocking scheduler.

@@ -1,7 +1,7 @@
-# Espresso Controller — Arduino Mega 2560
+# Espresso Controller
 
-Open-source firmware for 3-group commercial espresso machines.
-Controls boiler temperature, pump pressure, water level, and independent per-group brew cycles — all running concurrently on a non-blocking scheduler.
+Open-source firmware for up to 3-group commercial espresso machines, built on the Arduino Mega 2560.
+Controls boiler temperature, pressure, water level, and independent per-group brew cycles — all running concurrently on a non-blocking scheduler.
 
 ---
  
@@ -11,9 +11,9 @@ Controls boiler temperature, pump pressure, water level, and independent per-gro
 - **Boiler temperature PID** — time-proportional SSR control via DS18B20 1-Wire sensors, ~0.2 °C stability
 - **Pump pressure control** — AC phase-angle dimmer with zero-cross detect synchronisation
 - **Automatic boiler fill** — electrode level probe with hysteresis; inhibits fill when reservoir is low
-- **Per-group flow metering** — shot stops automatically at target volume (mL), configurable per group
+- **Per-group flow metering** — shot stops automatically at target volume (mL) or after defined time (mS), configurable per group
 - **Non-blocking scheduler** — all control loops run concurrently via `millis()` timing; no `delay()` anywhere
-- **Runtime configuration** — full serial command interface at 115 200 baud
+- **Runtime configuration** — full serial command interface at 115200 baud
 - **EEPROM persistence** — PID tunings and setpoints survive power cycles
 - **Modular codebase** — each subsystem is an independent header-only class; easy to extend
  
@@ -30,9 +30,15 @@ When contributing firmware changes:
 - Test on a real machine or a bench simulation (resistive load + signal generator for ZCD) before opening a PR
  
 ---
+
+## Safety
+
+> ⚠️ This project involves **mains voltage (230V AC)**. The Arduino outputs 5V signal only — mains is never connected directly to Mega pins. All high-voltage switching is done via the SSR and Robodyn dimmer module. Read the safety section in [INSTALL.md](INSTALL.md) before building.
+
+---
  
 ## License
  
-GNU GPL License — see [`LICENSE`](LICENSE) for details.
+GNU GPL — see [`LICENSE`](LICENSE) for details.
  
 This project is not affiliated with or endorsed by any hardware manufacturer.
